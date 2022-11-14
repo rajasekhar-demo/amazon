@@ -57,7 +57,22 @@ const Cart = () => {
     _cart.splice(index, 1); 
     setCart([..._cart]);
     handleLocalCart(_cart);
+    updateTotal();
   }
+
+  const updateTotal = () => {
+    let total = 0;
+    let _cart = cart
+    _cart.map((item) => {
+      total += parseFloat(item.price) * parseInt(item.quantity);
+      //console.log(item, index)
+    });
+    setTotal(total);
+  }
+
+  useEffect(()=>{
+    updateTotal()
+  },[cart])
 
   return (
     <Fragment>

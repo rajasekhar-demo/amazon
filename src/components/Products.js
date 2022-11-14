@@ -11,16 +11,19 @@ function Products() {
   const [cartTotal, setCartTotal] = useState(0)
 
 
-  let url = 'https://633adc2ce02b9b64c61951aa.mockapi.io/api/v1/'
+  let url = 'http://localhost:1337'
   useEffect(()=>{
-    axios.get(`${url}/products?page=3&per_page=2`).then((res) => {
-      console.log(res)
+    axios.get(`${url}/products`).then((res) => {
+      console.log(JSON.stringify(res))
       setProducts(res.data)
     })
     console.log('Page load Effet')
   },[])
 
-  const cartHandler = (data) => {
+  const cartHandler = (event, data) => {
+    event.preventDefault();
+    console.log(event);
+
     setCart([...cart, data])
   }
 

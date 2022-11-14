@@ -11,7 +11,7 @@ export const Product = (props) => {
           <div className="product-img position-relative overflow-hidden">
             <img className="img-fluid w-100" src={props.data.productImage} alt="" />
             <div className="product-action">
-              <a onClick={(data) => props.addtocart(props.data)} className="btn btn-outline-dark btn-square" href="">
+              <a onClick={(event) => props.addtocart(event, props.data)} className="btn btn-outline-dark btn-square" href="">
                 <i className="fa fa-shopping-cart"></i>
               </a>
               <a className="btn btn-outline-dark btn-square" href="">

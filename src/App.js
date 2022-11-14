@@ -302,6 +302,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Store/>} />
           <Route path='/catelog' element={<Catelog/>} />
+          {/* <Route path='/lipid-profile-hyderabad' element={<Catelog/>} /> */}
           <Route path='/checkout' element={<Checkout/>} />
           <Route path='/cart' element={<Cart/>} />
         </Routes>
